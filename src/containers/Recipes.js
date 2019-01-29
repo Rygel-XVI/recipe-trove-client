@@ -1,19 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchRecipes } from '../actions/recipes'
 import RecipeCard from './RecipeCard'
 
 class Recipes extends Component {
 
-  componentDidMount() {
-    fetchRecipes();
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      recipes: []
+    }
   }
-  
+
+  componentDidMount() {
+    this.props.fetchRecipes()
+  }
+
   render() {
+
     return (
       <div className="Recipes">
-        <p>Recipe containers</p>
+      <ul>render recipe cards here</ul>
       </div>
     );
   }
 }
 
-export default Recipes;
+
+const mapStateToProps = (state) => {
+  return { recipes: state.recipes }
+}
+
+export default connect(mapStateToProps, { fetchRecipes }) (Recipes);
