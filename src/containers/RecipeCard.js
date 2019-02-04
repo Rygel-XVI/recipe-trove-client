@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class RecipeCard extends Component {
+const RecipeCard = ({ id, name, description }) => (
 
-  render() {
-    return (
-      <div className="RecipeCard">
-      <li key={this.props.keys}>
-        <p>Recipe Card</p>
-        <h3>{this.props.name}</h3>
-        </li>
-      </div>
-    );
-  }
-}
+    <li key={id}>
+      <p>Recipe Card</p>
+      <h3>{name}</h3>
+    </li>
+
+)
 
 export default RecipeCard;

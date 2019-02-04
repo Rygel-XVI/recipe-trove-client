@@ -11,25 +11,32 @@ class Recipes extends Component {
     this.state = {
       recipes: []
     }
+    this.recipeCards = this.recipeCards.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchRecipes()
   }
 
+  recipeCards() {
+    return this.props.recipes.map(recipe => {
+      return <RecipeCard recipe={recipe} key={recipe.id} />
+    })
+  }
+
   render() {
 
     return (
       <div className="Recipes">
-      <ul>render recipe cards here</ul>
-      </div>
+      {this.recipeCards()}
+       </div>
     );
   }
+
 }
 
-
-const mapStateToProps = (state) => {
-  return { recipes: state.recipes }
+const mapStateToProps = state => {
+  return { recipes: state.recipeReducer.recipes }
 }
 
 export default connect(mapStateToProps, { fetchRecipes }) (Recipes);

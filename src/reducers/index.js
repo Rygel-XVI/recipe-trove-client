@@ -4,6 +4,6 @@ import recipeReducer from '../reducers/recipe_reducer'
 import ingredientReducer from '../reducers/ingredient_reducer'
 
 export default combineReducers({
-  recipes: recipeReducer,
+  recipeReducer: recipeReducer,
   ingredients: ingredientReducer
 })
