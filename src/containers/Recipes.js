@@ -2,20 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 import RecipeCard from './RecipeCard'
+import './Recipes.css'
 
 class Recipes extends Component {
 
   constructor(props) {
     super(props)
-
     this.state = {
       recipes: []
     }
     this.recipeCards = this.recipeCards.bind(this)
-  }
-
-  componentDidMount() {
-    this.props.fetchRecipes()
   }
 
   recipeCards() {
@@ -24,15 +20,19 @@ class Recipes extends Component {
     })
   }
 
-  render() {
+  componentDidMount() {
+    this.props.fetchRecipes()
+  }
 
+  render() {
     return (
-      <div className="Recipes">
+      <div className="recipes left-column" >
+      <ul>
       {this.recipeCards()}
+       </ul>
        </div>
     );
   }
-
 }
 
 const mapStateToProps = state => {

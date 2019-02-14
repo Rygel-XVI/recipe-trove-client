@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecipeCard = ({ recipe: { id, name, description } }) => (
+const IngredientCard = ({ ingredient: { id, name, description } }) => (
 
     <li key={id}>
       <h3>{name}</h3>
@@ -9,4 +9,4 @@ const RecipeCard = ({ recipe: { id, name, description } }) => (
 
 )
 
-export default RecipeCard;
+export default IngredientCard;

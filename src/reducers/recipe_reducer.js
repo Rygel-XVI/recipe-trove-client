@@ -9,9 +9,3 @@ export default function recipeReducer (state={
         return state
   }
 }
-
-//
-// export default (state = [], action) => {
-//   switch(action.type) {
-//     case 'GET_SURFBOARDS_SUCCESS':
-//       return action.surfboards;
