@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Nav from './containers/Nav'
-import Ingredients from './containers/Ingredients'
+import IngredientListContainer from './containers/IngredientListContainer'
 import Recipes from './containers/Recipes'
 
 
@@ -14,8 +14,7 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Nav />
-            <Route exact path="/recipes" component={Recipes} />
-            <Route exact path="/ingredients" component={Ingredients} />
+            <Route exact path="/search" component={IngredientListContainer} />
           </React.Fragment>
         </Router>
         <IngredientListContainer />
