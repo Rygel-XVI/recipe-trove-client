@@ -5,8 +5,9 @@ import './Nav.css'
 const Nav = () => {
   return (
     <div className="navbar">
-    <NavLink className='navlink' to="/recipes">Recipes</NavLink>
-    <NavLink className='navlink' to="/ingredients">Ingredients</NavLink>
+    <NavLink className='navlink' to="/search">Search</NavLink>
+    <NavLink className='navlink' to="/create-recipe">Create</NavLink>
+    <NavLink classname='navlink' to="/modify-recipe">Modify</NavLink
     </div>
   );
 };

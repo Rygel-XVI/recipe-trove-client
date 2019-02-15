@@ -18,6 +18,7 @@ class App extends Component {
             <Route exact path="/ingredients" component={Ingredients} />
           </React.Fragment>
         </Router>
+        <IngredientListContainer />
       </div>
     );
   }
