@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchIngredients } from '../actions/ingredients'
 import IngredientListForm from '../components/IngredientListForm'
-import RecipeList from '../components/RecipeList'
 
 //display a list of checkboxes and submit a form to display the recipes associated
 class IngredientListContainer extends Component {
@@ -15,19 +14,18 @@ class IngredientListContainer extends Component {
   }
 
   componentDidMount() {
+    // debugger;
     this.props.fetchIngredients()
   }
-  //
-  // ingredientCards() {
-  //   return this.props.ingredients.map(ingredient => {
-  //     return <IngredientCard ingredient={ingredient} key={ingredient.id} />
-  //   })
-  // }
+
+  updateRecipes() {
+    // this.props.updateRecipes()
+  }
 
   render() {
     return (
       <div className="ingredient-list-container">
-      <IngredientListForm ingredients={this.props.ingredients} /> //have checkboxes to submit form to fetch recipes
+      <IngredientListForm ingredients={this.props.ingredients} />
       </div>
     );
   }

@@ -1,0 +1,19 @@
+.ingredient-list-form {
+  display: 'flex';
+  flex-direction: 'row';
+  width: 50%;
+  margin: 0.5%;
+  padding: 0.05%;
+  flex: 1 2;
+  background-color: #B54A48;
+}
+
+.ingredient-submit {
+  display: 'flex';
+  flex-direction: 'row';
+  width: 50%;
+  margin: 1.5%;
+  padding: 0.5%;
+  flex: 1 2;
+  background-color: #9B6C6B;
+}

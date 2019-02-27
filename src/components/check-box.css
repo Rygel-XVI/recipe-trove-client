@@ -1,5 +1,6 @@
 .check-box {
   display: block;
   padding-left: 15px;
-  text-indent: -15px
+  text-indent: -15px;
+  margin: 1.5%;
 }
