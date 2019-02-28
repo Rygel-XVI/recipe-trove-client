@@ -1,5 +1,7 @@
 //form that submits ingredient search to fetch recipes
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { fetchRecipes } from '../actions/recipes'
 import IngredientCheckbox from './IngredientCheckbox'
 import './ingredient-list-form.css'
 
@@ -9,20 +11,27 @@ class IngredientListForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      checked: [1]
+      checkedIngredients: []
     }
     this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
     this.toggleChecked = this.toggleChecked.bind(this)
     this.isChecked = this.isChecked.bind(this)
   }
 
+
+//try connecting to redux and updating checkedIngredients through there
+
   isChecked(ingredientId) {
-    return this.state.checked.includes(ingredientId.id)
+    try{
+      return this.state.checkedIngredients.includes(ingredientId)
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   ingredientCheckbox() {
     return this.props.ingredients.map(ingredient => {
-      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked} />
+      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked(ingredient.id)} />
     })
   }
 
@@ -33,15 +42,12 @@ class IngredientListForm extends Component {
   }
 
   toggleChecked(event) {
-    // debugger;
-    //changes local state to include/remove ingredient id
-    // event.target.value //id
-    if (!this.state.checked.includes(event.target.value)) {
-      this.setState({ ...this.state, checked: this.state.checked.push(event.target.value)})
-    } else {
-      this.setState({ ...this.state, checked: this.state.checked.filter(i => i != event.target.value)})
+    if (!this.state.checkedIngredients.includes(event.target.value)) {
+      this.setState({ checkedIngredients: [...this.state.checkedIngredients, parseInt(event.target.value)] })
     }
-    // debugger;
+    // else {
+    //   return this.setState({ ...this.state, checkedIngredients: this.state.checkedIngredients.map(i => i != event.target.value)})
+    // }
   }
 
   render() {
@@ -56,4 +62,6 @@ class IngredientListForm extends Component {
   }
 }
 
-export default IngredientListForm
+
+// export default IngredientListForm
+export default connect(null, { fetchRecipes }) (IngredientListForm);
