@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
-import RecipeCard from './RecipeCard'
 import './Recipes.css'
 
 class Recipes extends Component {
@@ -11,14 +10,13 @@ class Recipes extends Component {
     this.state = {
       recipes: []
     }
-    this.recipeCards = this.recipeCards.bind(this)
   }
 
-  recipeCards() {
-    return this.props.recipes.map(recipe => {
-      return <RecipeCard recipe={recipe} key={recipe.id} />
-    })
-  }
+  // recipeCards() {
+  //   return this.props.recipes.map(recipe => {
+  //     return <RecipeCard recipe={recipe} key={recipe.id} />
+  //   })
+  // }
 
   componentDidMount() {
     this.props.fetchRecipes()
@@ -26,10 +24,8 @@ class Recipes extends Component {
 
   render() {
     return (
-      <div className="recipes left-column" >
-      <ul>
-      {this.recipeCards()}
-       </ul>
+      <div className="recipes right-column" >
+
        </div>
     );
   }

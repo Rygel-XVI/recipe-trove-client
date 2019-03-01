@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Nav from './containers/Nav'
 import IngredientListContainer from './containers/IngredientListContainer'
-import Recipes from './containers/Recipes'
 
 
 class App extends Component {
