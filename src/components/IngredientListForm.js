@@ -42,12 +42,12 @@ class IngredientListForm extends Component {
   }
 
   toggleChecked(event) {
-    if (!this.state.checkedIngredients.includes(event.target.value)) {
+    if (event.target.checked) {
       this.setState({ checkedIngredients: [...this.state.checkedIngredients, parseInt(event.target.value)] })
+    } else {
+      let newCheckedObject = this.state.checkedIngredients.filter(i => i != event.target.value)
+      this.setState({ checkedIngredients: newCheckedObject})
     }
-    // else {
-    //   return this.setState({ ...this.state, checkedIngredients: this.state.checkedIngredients.map(i => i != event.target.value)})
-    // }
   }
 
   render() {
