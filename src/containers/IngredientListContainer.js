@@ -32,7 +32,9 @@ class IngredientListContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  return { ingredients: state.ingredientReducer.ingredients }
+  return { ingredients: state.ingredientReducer.ingredients,
+           checkedIngredients: state.ingredientReducer.checkedIngredints
+         }
 }
 
 export default connect(mapStateToProps, { fetchIngredients }) (IngredientListContainer);

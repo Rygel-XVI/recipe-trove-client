@@ -16,6 +16,7 @@ class IngredientListForm extends Component {
     this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
     this.toggleChecked = this.toggleChecked.bind(this)
     this.isChecked = this.isChecked.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 
@@ -37,8 +38,7 @@ class IngredientListForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // debugger;
-    //dispatches fetch request for recipes
+    this.props.fetchRecipes(this.state.checkedIngredients)
   }
 
   toggleChecked(event) {
