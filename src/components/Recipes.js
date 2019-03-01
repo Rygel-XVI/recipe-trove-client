@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
+import RecipeCard from './RecipeCard'
 import './Recipes.css'
 
 class Recipes extends Component {
