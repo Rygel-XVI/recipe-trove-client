@@ -7,6 +7,13 @@ export const fetchRecipes = (ingredientList) => {
   }
 }
 
+export const getRecipe = (recipeName) => {
+  debugger;
+  return dispatch => ({
+    type: 'GET_RECIPE', recipeName
+  })
+}
+
 
 // const petType = this.state.filters.type
 // if (petType === "cat") {

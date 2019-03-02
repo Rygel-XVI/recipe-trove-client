@@ -1,23 +1,17 @@
 .ingredient-list-form {
-  /* display: flex; */
-
   width: 45%;
-  margin: 5px;
-  padding: 1px;
+  margin: 0.5%;
+  padding: 1%;
   flex: 1;
   background-color: #B54A48;
 }
 
-form {
-  /* display: 'flex' */
-}
-
 .ingredient-submit {
-  /* display: 'flex'; */
-  flex-direction: 'row';
-  width: 200px;
+  width: 50%;
+  height: 40px;
   margin: 1.5%;
   padding: 0.5%;
   flex: 1 2;
   background-color: #9B6C6B;
+  font-size: 18px;
 }

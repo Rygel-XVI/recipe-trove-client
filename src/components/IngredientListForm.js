@@ -55,7 +55,7 @@ class IngredientListForm extends Component {
       <div className="ingredient-list-form">
       <form onSubmit={this.handleSubmit}>
         {this.ingredientCheckbox()}
-        <button className='ingredient-submit' type="submit">Change Ingredients</button>
+        <button className='ingredient-submit' type="submit">Modify Ingredients</button>
       </form>
       </div>
     );

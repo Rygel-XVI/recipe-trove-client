@@ -1,8 +1,8 @@
 
 .right-column {
   width: 45%;
-  margin: 5px;
-  padding: 1px;
+  margin: 0.5%;
+  padding: 1%;
   flex: 1;
-  background-color: #8A6B9B;
+  background-color: lightblue;
 }

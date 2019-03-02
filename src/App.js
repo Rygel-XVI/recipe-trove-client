@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Nav from './containers/Nav'
 import IngredientListContainer from './containers/IngredientListContainer'
+import RecipeDetails from './components/RecipeDetails'
 
 
 class App extends Component {
@@ -13,10 +14,11 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Nav />
+            <Route exact path="/" component={IngredientListContainer} />
             <Route exact path="/search" component={IngredientListContainer} />
+            <Route path="/recipes/:name" render={(props) => <RecipeDetails recipe={props} />} />
           </React.Fragment>
         </Router>
-        <IngredientListContainer />
       </div>
     );
   }

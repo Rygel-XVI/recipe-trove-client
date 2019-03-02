@@ -18,7 +18,6 @@ class IngredientListContainer extends Component {
   }
 
   componentDidMount() {
-    // debugger;
     this.props.fetchIngredients()
     this.props.fetchRecipes()
   }
