@@ -11,13 +11,14 @@ class Recipes extends Component {
     this.state = {
       recipes: []
     }
+    this.recipeCards.bind(this)
   }
 
-  // recipeCards() {
-  //   return this.props.recipes.map(recipe => {
-  //     return <RecipeCard recipe={recipe} key={recipe.id} />
-  //   })
-  // }
+  recipeCards() {
+    return this.props.recipes.map(recipe => {
+      return <RecipeCard recipe={recipe} key={recipe.id} />
+    })
+  }
 
   componentDidMount() {
     this.props.fetchRecipes()
@@ -26,7 +27,7 @@ class Recipes extends Component {
   render() {
     return (
       <div className="recipes right-column" >
-
+      {this.recipeCards()}
        </div>
     );
   }
