@@ -16,7 +16,7 @@ class App extends Component {
             <Nav />
             <Route exact path="/" component={IngredientListContainer} />
             <Route exact path="/search" component={IngredientListContainer} />
-            <Route path="/recipes/:name" render={(props) => <RecipeDetails recipe={props} />} />
+            <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
           </React.Fragment>
         </Router>
       </div>

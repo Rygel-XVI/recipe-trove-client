@@ -7,11 +7,14 @@ export const fetchRecipes = (ingredientList) => {
   }
 }
 
-export const getRecipe = (recipeName) => {
+export const getRecipe = (recipeId) => {
   debugger;
-  return dispatch => ({
-    type: 'GET_RECIPE', recipeName
-  })
+  const baseUrl = 'http://localhost:3001/recipes/'
+  return dispatch => {
+    fetch(baseUrl + recipeId)
+    .then(resp => resp.json())
+    .then(recipe => dispatch({ type: 'SHOW_RECIPE', recipe }))
+  }
 }
 
 
