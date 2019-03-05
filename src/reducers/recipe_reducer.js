@@ -7,7 +7,7 @@ export default function recipeReducer (state={
         return { ...state, recipes: action.recipes }
       case "SHOW_RECIPE":
         debugger;
-        return { recipe: action.recipe }
+        return { ...state, recipe: action.recipe }
       default:
         return state
   }
