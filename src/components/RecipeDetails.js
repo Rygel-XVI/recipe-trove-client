@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 const RecipeDetails = ({ recipe: {location: { state }} }) => (
   <div className="recipe-details">
