@@ -7,44 +7,12 @@ export const fetchRecipes = (ingredientList) => {
   }
 }
 
-export const getRecipe = (recipeId) => {
-  debugger;
-  const baseUrl = 'http://localhost:3001/recipes/'
-  return dispatch => {
-    fetch(baseUrl + recipeId)
-    .then(resp => resp.json())
-    .then(recipe => dispatch({ type: 'SHOW_RECIPE', recipe }))
-  }
-}
-
-
-// const petType = this.state.filters.type
-// if (petType === "cat") {
-//   petFetch("/api/pets?type=cat")
-// } else if (petType === "dog") {
-//   petFetch("/api/pets?type=dog")
-// } else if (petType === "micropig") {
-//   petFetch("/api/pets?type=micropig")
-// } else {
-//   petFetch("/api/pets")
+// export const getRecipe = (recipeId) => {
+//   debugger;
+//   const baseUrl = 'http://localhost:3001/recipes/'
+//   return dispatch => {
+//     fetch(baseUrl + recipeId)
+//     .then(resp => resp.json())
+//     .then(recipe => dispatch({ type: 'SHOW_RECIPE', recipe }))
+//   }
 // }
-// }
-
-
-// fetch('https://mywebsite.com/endpoint/', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({
-//     firstParam: 'yourValue',
-//     secondParam: 'yourOtherValue',
-//   }),
-// }).then((response) => response.json())
-//     .then((responseJson) => {
-//       return responseJson.movies;
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });

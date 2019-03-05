@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
-import { getRecipe } from '../actions/recipes'
 
 import RecipeCard from './RecipeCard'
 import './Recipes.css'
@@ -39,4 +38,4 @@ const mapStateToProps = state => {
   return { recipes: state.recipeReducer.recipes }
 }
 
-export default connect(mapStateToProps, { fetchRecipes, getRecipe }) (Recipes);
+export default connect(mapStateToProps, { fetchRecipes }) (Recipes);

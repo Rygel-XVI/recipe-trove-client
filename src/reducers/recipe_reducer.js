@@ -5,12 +5,7 @@ export default function recipeReducer (state={
     switch(action.type){
       case "SET_RECIPES":
         return { ...state, recipes: action.recipes }
-      case "SHOW_RECIPE":
-        debugger;
-        return { ...state, recipe: action.recipe }
       default:
         return state
   }
 }
-
-// state.recipes.find(recipe => recipe.name == action.recipeName)
