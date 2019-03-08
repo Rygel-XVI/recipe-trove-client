@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 
 
-class IngredientListForm extends Component {
+class ModifyRecipeForm extends Component {
   constructor(props) {
     super(props)
-
-    this.handleSubmit.bind(this)
-    this.handleDelete.bind(this)
+    // 
+    // this.handleSubmit.bind(this)
+    // this.handleDelete.bind(this)
   }
 
   // dispatches to post on submit
@@ -22,6 +22,12 @@ class IngredientListForm extends Component {
   }
 
   render() {
+    return (
+      <div>
+      Modify
+      </div>
+    )
+
   }
 
 }

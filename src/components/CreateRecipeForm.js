@@ -16,6 +16,11 @@ class CreateRecipeForm extends Component {
   }
 
   render() {
+    return (
+      <div>
+      Create
+      </div>
+    )
   }
 
 }
