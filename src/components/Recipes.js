@@ -21,10 +21,6 @@ class Recipes extends Component {
     })
   }
 
-  componentDidMount() {
-    this.props.fetchRecipes()
-  }
-
   render() {
     return (
       <div className="recipes right-column" >
