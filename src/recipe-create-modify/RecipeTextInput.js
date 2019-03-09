@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import './create-recipe.css'
 
-const RecipeTextInput = ({ label }) => (
+
+const RecipeTextInput = ({ label, value, handleChange }) => (
   <div className="recipe-text-input">
   <label className="text-input-label">{label}</label>
-  <input type='text' />
+  <input className='input-field' type='text' name={label} value={value} onChange={handleChange}/>
   </div>
 )
 export default RecipeTextInput

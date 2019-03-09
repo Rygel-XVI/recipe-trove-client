@@ -1,0 +1,14 @@
+/* Create Recipe Form */
+.create-recipe-form {
+  display: flex;
+}
+
+
+/* TextareaInput and TextInput  */
+.input-field {
+  margin: 0.5%;
+}
+
+label {
+  display: flex;
+}
