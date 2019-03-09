@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import Nav from './containers/Nav'
 import SearchDisplayContainer from './containers/SearchDisplayContainer'
 import RecipeDetails from './components/RecipeDetails'
-import CreateRecipeForm from './components/CreateRecipeForm'
-import ModifyRecipeForm from './components/ModifyRecipeForm'
+import CreateRecipeForm from './recipe-create-modify/CreateRecipeForm'
+import ModifyRecipeForm from './recipe-create-modify/ModifyRecipeForm'
 
 class App extends Component {
   render() {
