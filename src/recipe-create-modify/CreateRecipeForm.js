@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 
+import RecipeTextInput from './RecipeTextInput'
+import RecipeTextareaInput from './RecipeTextareaInput'
+
 
 class CreateRecipeForm extends Component {
   constructor(props) {
@@ -12,8 +15,6 @@ class CreateRecipeForm extends Component {
         name: '',
         description: '',
         instructions: '',
-        rating: -1,
-        servings: ''
       }
     }
 
@@ -30,13 +31,13 @@ class CreateRecipeForm extends Component {
       <div>
       <form onSubmit={this.handleSubmit}>
       <label>Recipe Name</label>
-      <input type='text' />
+      <RecipeTextInput name='recipe-name' />
       <br />
       <label>Description</label>
-      <textarea />
+      <RecipeTextareaInput name='recipe-description' />
       <br />
       <label>Instructions</label>
-      <textarea />
+      <RecipeTextareaInput name='recipe-instructions' />
       <br />
       <button className='create-recipe' type="submit">Create Recipe</button>
       </form>
