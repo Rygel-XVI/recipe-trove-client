@@ -1,14 +1,31 @@
 /* Create Recipe Form */
-.create-recipe-form {
+form {
   display: flex;
+  flex-direction: column
+
+}
+
+.btn-create-recipe {
+  width: 10%;
+  height: 2em;
 }
 
 
 /* TextareaInput and TextInput  */
-.input-field {
+
+.input {
+  display: flex;
   margin: 0.5%;
 }
 
 label {
+  margin: 0.5%;
+  width: 5%;
   display: flex;
+}
+
+/* Ingredient Checkbox */
+label .check-box {
+  display: flex;
+  flex-direction: row;
 }

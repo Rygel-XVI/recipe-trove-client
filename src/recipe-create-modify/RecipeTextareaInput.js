@@ -3,7 +3,7 @@ import './create-recipe.css'
 
 
 const RecipeTextareaInput = ({ label, value, handleChange }) => (
-  <div className="recipe-textarea-input">
+  <div className="input textarea">
   <label className="textarea-input-label">{label}</label>
   <textarea className='input-field' name={label} value={value} onChange={handleChange} />
   </div>

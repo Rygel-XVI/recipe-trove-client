@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 import { fetchIngredients } from '../actions/ingredients'
 
-
+import IngredientCheckbox from '../components/IngredientCheckbox'
 import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
 import './create-recipe.css'
@@ -24,13 +24,14 @@ class CreateRecipeForm extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
+    this.toggleChecked = this.toggleChecked.bind(this)
   }
 
-  handleChange(e) {
+  handleChange(event) {
     this.setState({
       recipe: {
         ...this.state.recipe,
-        [e.target.name]: e.target.value
+        [event.target.name]: event.target.value
       }
     })
   }
@@ -41,12 +42,28 @@ class CreateRecipeForm extends Component {
   }
 
   ingredientCheckbox() {
-  //   return this.props.ingredients.map(ingredient => {
-  //     return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked(ingredient.id)} />
-  //   })
+    console.log('here')
+    return this.props.ingredients.map(ingredient => {
+      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} />
+    })
   }
 
-// fetches ingredients from api if they haven't been fetched
+  toggleChecked(event) {
+    if (event.target.checked) {
+
+      this.setState({ recipe: {
+        ...this.state.recipe, ingredients: parseInt(event.target.value)
+      }})
+
+    } else {
+      let newCheckedObject = this.state.recipe.ingredients.filter(i => i != event.target.value)
+      this.setState({ recipe: {
+        ...this.state.recipe, ingredients: newCheckedObject}
+      })
+    }
+  }
+
+  // fetches ingredients from api if they haven't been fetched
   componentDidMount() {
     if (this.props.ingredients.length < 1) {
       this.props.fetchIngredients()
@@ -55,15 +72,16 @@ class CreateRecipeForm extends Component {
 
   render() {
     return (
-      <div className="create-recipe-form">
-      <form onSubmit={this.handleSubmit}>
+      <div>
+      <form className="create-recipe-form" onSubmit={this.handleSubmit}>
       <RecipeTextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
       <br />
       <RecipeTextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
       <br />
       <RecipeTextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
       <br />
-      <button className='create-recipe' type="submit">Create Recipe</button>
+      {this.ingredientCheckbox()}
+      <button className='btn-create-recipe' type="submit">Create Recipe</button>
       </form>
       </div>
     )
@@ -73,7 +91,7 @@ class CreateRecipeForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
-  ingredients: state.ingredientReducer.ingredients
+    ingredients: state.ingredientReducer.ingredients
   }
 }
 
