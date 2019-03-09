@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
+import { fetchIngredients } from '../actions/ingredients'
+
 
 import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
@@ -15,7 +17,8 @@ class CreateRecipeForm extends Component {
       recipe: {
         name: '',
         description: '',
-        instructions: ''
+        instructions: '',
+        ingredients: []
       }
     }
     this.handleChange = this.handleChange.bind(this)
@@ -36,6 +39,13 @@ class CreateRecipeForm extends Component {
 
   }
 
+// fetches ingredients from api if they haven't been fetched
+  componentDidMount() {
+    if (this.state.recipe.ingredients.length < 1) {
+      this.props.fetchIngredients()
+    }
+  }
+
   render() {
     return (
       <div className="create-recipe-form">
@@ -54,4 +64,10 @@ class CreateRecipeForm extends Component {
 
 }
 
-export default connect(null, null) (CreateRecipeForm);
+const mapStateToProps = (state) => {
+  return {
+  ingredients: state.ingredientReducer.ingredients
+  }
+}
+
+export default connect(mapStateToProps, {fetchIngredients}) (CreateRecipeForm);
