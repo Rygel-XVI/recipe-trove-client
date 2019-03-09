@@ -29,7 +29,21 @@ class CreateRecipeForm extends Component {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-      <input text=
+      <label>Recipe Name</label>
+      <input type='text' />
+      <br />
+      <label>Description</label>
+      <textarea />
+      <br />
+      <label>Instructions</label>
+      <textarea />
+      <br />
+      <label>Rating</label>
+      <input type="number" />
+      <br />
+      <label>Servings</label>
+      <input type='text' />
+      <br />
       <button className='create-recipe' type="submit">Create Recipe</button>
       </form>
       </div>
