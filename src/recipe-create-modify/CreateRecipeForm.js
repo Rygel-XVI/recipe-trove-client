@@ -23,6 +23,7 @@ class CreateRecipeForm extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
   }
 
   handleChange(e) {
@@ -39,9 +40,15 @@ class CreateRecipeForm extends Component {
 
   }
 
+  ingredientCheckbox() {
+  //   return this.props.ingredients.map(ingredient => {
+  //     return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked(ingredient.id)} />
+  //   })
+  }
+
 // fetches ingredients from api if they haven't been fetched
   componentDidMount() {
-    if (this.state.recipe.ingredients.length < 1) {
+    if (this.props.ingredients.length < 1) {
       this.props.fetchIngredients()
     }
   }

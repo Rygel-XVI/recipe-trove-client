@@ -7,7 +7,7 @@ import Recipes from '../components/Recipes'
 import './search-display-container.css'
 
 //display a list of checkboxes and submit a form to display the recipes associated
-class IngredientListContainer extends Component {
+class SearchDisplayContainer extends Component {
 
   constructor(props) {
     super(props)
@@ -38,4 +38,4 @@ const mapStateToProps = state => {
          }
 }
 
-export default connect(mapStateToProps, { fetchIngredients, fetchRecipes }) (IngredientListContainer);
+export default connect(mapStateToProps, { fetchIngredients, fetchRecipes }) (SearchDisplayContainer);
