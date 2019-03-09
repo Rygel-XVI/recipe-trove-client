@@ -49,15 +49,17 @@ class CreateRecipeForm extends Component {
 
   toggleChecked(event) {
     if (event.target.checked) {
-
-      this.setState({ recipe: {
-        ...this.state.recipe, ingredients: [...this.state.recipe.ingredients, event.target.value]
-      }})
-
+      this.setState({
+        recipe: {
+          ...this.state.recipe, ingredients: [...this.state.recipe.ingredients, event.target.value]
+        }
+      })
     } else {
       let newCheckedObject = this.state.recipe.ingredients.filter(i => i != event.target.value)
-      this.setState({ recipe: {
-        ...this.state.recipe, ingredients: newCheckedObject}
+      this.setState({
+        recipe: {
+          ...this.state.recipe, ingredients: newCheckedObject
+        }
       })
     }
   }
