@@ -38,12 +38,6 @@ class CreateRecipeForm extends Component {
       <label>Instructions</label>
       <textarea />
       <br />
-      <label>Rating</label>
-      <input type="number" />
-      <br />
-      <label>Servings</label>
-      <input type='text' />
-      <br />
       <button className='create-recipe' type="submit">Create Recipe</button>
       </form>
       </div>
