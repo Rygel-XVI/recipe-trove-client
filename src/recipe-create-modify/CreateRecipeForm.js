@@ -42,7 +42,6 @@ class CreateRecipeForm extends Component {
   }
 
   ingredientCheckbox() {
-    console.log('here')
     return this.props.ingredients.map(ingredient => {
       return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} />
     })
@@ -52,7 +51,7 @@ class CreateRecipeForm extends Component {
     if (event.target.checked) {
 
       this.setState({ recipe: {
-        ...this.state.recipe, ingredients: parseInt(event.target.value)
+        ...this.state.recipe, ingredients: [...this.state.recipe.ingredients, event.target.value]
       }})
 
     } else {
