@@ -8,7 +8,6 @@ export const fetchRecipes = (ingredientList) => {
 }
 
 export const createRecipe = (recipe) => {
-console.log(JSON.stringify({ recipe }))
   let data = {
     method: 'POST',
     headers: {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { createIngredient } from '../actions/ingredients'
 
 class CreateIngredientForm extends Component {
   constructor(props) {
@@ -13,10 +14,22 @@ class CreateIngredientForm extends Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.onChange = this.handleChange.bind(this)
   }
 
-  handleSubmit() {
+  handleChange(event) {
+    this.setState({
+      ingredient: {
+        ...this.state.ingredient,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
+
+  handleSubmit(event) {
     debugger;
+    event.preventDefault();
+    this.props.createIngredient(this.state.ingredient)
   }
 
   render() {
@@ -24,13 +37,16 @@ class CreateIngredientForm extends Component {
       <div className='create-ingredient-div'>
       <form className='create-ingredient-form' onSubmit={this.handleSubmit}>
       <label>Name</label>
-      <input type='text' className='input-field' />
+      <input type='text' name='name' className='input-field' onChange={this.onChange} />
+      <br />
       <label>Description</label>
-      <textarea className='input-field' />
+      <textarea name='description' className='input-field' onChange={this.onChange}/>
+      <br />
+      <button className='btn-create-ingredient' type="submit">Create Ingredient</button>
       </form>
       </div>
     )
   }
 }
 
-export default connect(null, {}) (CreateIngredientForm);
+export default connect(null, {createIngredient}) (CreateIngredientForm);

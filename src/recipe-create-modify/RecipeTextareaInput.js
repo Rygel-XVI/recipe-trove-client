@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import './create-recipe.css'
-
 
 const RecipeTextareaInput = ({ label, value, handleChange }) => (
   <div className="input textarea">
