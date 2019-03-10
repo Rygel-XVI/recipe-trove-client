@@ -74,7 +74,7 @@ class CreateRecipeForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='create-recipe-div'>
       <form className="create-recipe-form" onSubmit={this.handleSubmit}>
       <RecipeTextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
       <br />
