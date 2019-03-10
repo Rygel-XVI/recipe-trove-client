@@ -1,6 +1,6 @@
 
 .app {
-  padding: '35px'
+  padding: 2%
 }
 
 .container {
@@ -15,11 +15,12 @@
 form {
   display: flex;
   flex-direction: column;
+  padding: 2%;
 }
 
 .btn-create-recipe {
   width: 10%;
-  height: 2em;
+  height: 300%;
 }
 
 .input {
@@ -89,7 +90,7 @@ label {
 
 /* NavBar CSS */
 .navbar {
-  width: 98%;
+  width: 95%;
   padding: 1%;
   margin: 1%;
 }
