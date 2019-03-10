@@ -6,7 +6,7 @@ import './App.css'
 import Nav from './containers/Nav'
 import SearchDisplayContainer from './containers/SearchDisplayContainer'
 import RecipeDetails from './components/RecipeDetails'
-import CreateRecipeForm from './recipe-create-modify/CreateRecipeForm'
+import CreateRecipeIngredientContainer from './recipe-create-modify/CreateRecipeIngredientContainer'
 import ModifyRecipeForm from './recipe-create-modify/ModifyRecipeForm'
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
             <Route exact path="/" component={SearchDisplayContainer} />
             <Route exact path="/search" component={SearchDisplayContainer} />
             <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
-            <Route exact path="/recipes/create" component={CreateRecipeForm} />
+            <Route exact path="/recipes/create" component={CreateRecipeIngredientContainer} />
             <Route exact path="/recipes/update" component={ModifyRecipeForm} />
           </React.Fragment>
         </Router>
