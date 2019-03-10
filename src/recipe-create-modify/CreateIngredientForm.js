@@ -23,8 +23,10 @@ class CreateIngredientForm extends Component {
     return (
       <div className='create-ingredient-div'>
       <form className='create-ingredient-form' onSubmit={this.handleSubmit}>
-      <input type='text' />
-      <textarea />
+      <label>Name</label>
+      <input type='text' className='input-field' />
+      <label>Description</label>
+      <textarea className='input-field' />
       </form>
       </div>
     )
