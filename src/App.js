@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import './App.css'
 
 import Nav from './containers/Nav'
 import SearchDisplayContainer from './containers/SearchDisplayContainer'
@@ -11,7 +12,7 @@ import ModifyRecipeForm from './recipe-create-modify/ModifyRecipeForm'
 class App extends Component {
   render() {
     return (
-      <div style={appStyle} className="App">
+      <div className="App">
         <Router>
           <React.Fragment>
             <Nav />
@@ -25,10 +26,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-const appStyle = {
-  padding: '35px'
 }
 
 export default App;

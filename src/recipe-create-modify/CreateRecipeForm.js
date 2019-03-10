@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchRecipes } from '../actions/recipes'
+import { createRecipe } from '../actions/recipes'
 import { fetchIngredients } from '../actions/ingredients'
 
 import IngredientCheckbox from '../components/IngredientCheckbox'
 import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
-import './create-recipe.css'
+// import './create-recipe.css'
 
 
 class CreateRecipeForm extends Component {
@@ -37,8 +37,9 @@ class CreateRecipeForm extends Component {
   }
 
   // dispatch to create new recipe
-  handleSubmit() {
-
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.createRecipe(this.state.recipe)
   }
 
   ingredientCheckbox() {
@@ -96,4 +97,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchIngredients}) (CreateRecipeForm);
+export default connect(mapStateToProps, {fetchIngredients, createRecipe}) (CreateRecipeForm);

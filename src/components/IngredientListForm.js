@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 import IngredientCheckbox from './IngredientCheckbox'
-import './ingredient-list-form.css'
+// import './ingredient-list-form.css'
 
 
 class IngredientListForm extends Component {
@@ -32,7 +32,7 @@ class IngredientListForm extends Component {
 
   ingredientCheckbox() {
     return this.props.ingredients.map(ingredient => {
-      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked(ingredient.id)} />
+      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} isChecked={this.isChecked(ingredient.id)} classname="filter-ingredients" />
     })
   }
 
@@ -52,9 +52,9 @@ class IngredientListForm extends Component {
 
   render() {
     return (
-      <div className="ingredient-list-form">
-      <form onSubmit={this.handleSubmit}>
-        {this.ingredientCheckbox()}
+      <div className="ingredient-list-div">
+      <form className="ingredient-list-form" onSubmit={this.handleSubmit}>
+        <div className="ingredient-checkboxes" >{this.ingredientCheckbox()}</div>
         <button className='ingredient-submit' type="submit">Modify Ingredients</button>
       </form>
       </div>

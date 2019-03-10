@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './create-recipe.css'
+// import './create-recipe.css'
 
 
 const RecipeTextInput = ({ label, value, handleChange }) => (

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import './check-box.css'
 
-
-const IngredientCheckbox = ({ ingredient: { id, name, description }, toggleChecked, isChecked }) => (
-  <label className="check-box">
-    <input type="checkbox" value={id} name={name} key={id} onChange={toggleChecked} checked={isChecked}/>{name}
+const IngredientCheckbox = ({ ingredient: { id, name, description }, toggleChecked, isChecked, classname }) => (
+  <label className={classname}>
+    <input type="checkbox"className={classname} value={id} name={name} key={id} onChange={toggleChecked} checked={isChecked}/>{name}
   </label>
 )
 
