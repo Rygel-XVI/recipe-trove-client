@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
 import './App.css'
 
 import Nav from './containers/Nav'
@@ -16,11 +16,14 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Nav />
+            <Switch>
             <Route exact path="/" component={SearchDisplayContainer} />
             <Route exact path="/search" component={SearchDisplayContainer} />
-            <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
             <Route exact path="/recipes/create" component={CreateRecipeIngredientContainer} />
             <Route exact path="/recipes/update" component={ModifyRecipeForm} />
+            <Route path="/recipes/modify/:id" render={(props) => <ModifyRecipeForm recipe={props} />} />
+            <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
+            </Switch>
           </React.Fragment>
         </Router>
       </div>
