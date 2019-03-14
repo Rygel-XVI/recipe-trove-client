@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
 import './App.css'
 
+import { connect } from 'react-redux'
+import { fetchRecipes } from './actions/recipes'
+import { fetchIngredients } from './actions/ingredients'
+
+
 import Nav from './containers/Nav'
 import SearchDisplayContainer from './containers/SearchDisplayContainer'
 import RecipeDetails from './components/RecipeDetails'
@@ -10,6 +15,12 @@ import CreateRecipeIngredientContainer from './recipe-create-modify/CreateRecipe
 import ModifyRecipeForm from './recipe-create-modify/ModifyRecipeForm'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchIngredients()
+    this.props.fetchRecipes()
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,4 +42,5 @@ class App extends Component {
   }
 }
 
-export default App;
+// export default App;
+export default connect(null, { fetchIngredients, fetchRecipes }) (App);

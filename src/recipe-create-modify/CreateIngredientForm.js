@@ -27,7 +27,6 @@ class CreateIngredientForm extends Component {
   }
 
   handleSubmit(event) {
-    debugger;
     event.preventDefault();
     this.props.createIngredient(this.state.ingredient)
   }

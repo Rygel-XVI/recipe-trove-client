@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { createRecipe } from '../actions/recipes'
-import { fetchIngredients } from '../actions/ingredients'
 
 import IngredientCheckbox from '../components/IngredientCheckbox'
 import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
-// import './create-recipe.css'
 
 
 class CreateRecipeForm extends Component {
@@ -65,13 +63,6 @@ class CreateRecipeForm extends Component {
     }
   }
 
-  // fetches ingredients from api if they haven't been fetched
-  componentDidMount() {
-    if (this.props.ingredients.length < 1) {
-      this.props.fetchIngredients()
-    }
-  }
-
   render() {
     return (
       <div className='create-recipe-div'>
@@ -97,4 +88,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchIngredients, createRecipe}) (CreateRecipeForm);
+export default connect(mapStateToProps, {createRecipe}) (CreateRecipeForm);

@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 import IngredientCheckbox from './IngredientCheckbox'
-// import './ingredient-list-form.css'
-
 
 class IngredientListForm extends Component {
 
