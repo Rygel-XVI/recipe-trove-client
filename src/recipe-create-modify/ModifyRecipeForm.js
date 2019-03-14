@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchRecipe } from '../actions/recipes'
+
+import IngredientCheckbox from '../components/IngredientCheckbox'
+import RecipeTextInput from './RecipeTextInput'
+import RecipeTextareaInput from './RecipeTextareaInput'
 
 class ModifyRecipeForm extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       recipe: {
         name: '',
@@ -14,38 +16,84 @@ class ModifyRecipeForm extends Component {
         ingredients: []
       }
     }
-    // this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
+    this.toggleChecked = this.toggleChecked.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
   }
 
-  // dispatches to post on submit
-  handleModify() {
+  handleChange(event) {
+    this.setState({
+      recipe: {
+        ...this.state.recipe,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.createRecipe(this.state.recipe)
+  }
+
+  ingredientCheckbox() {
+    return this.props.ingredients.map(ingredient => {
+      return <IngredientCheckbox ingredient={ingredient} key={ingredient.id} toggleChecked={this.toggleChecked} />
+    })
+  }
+
+  toggleChecked(event) {
+    if (event.target.checked) {
+      this.setState({
+        recipe: {
+          ...this.state.recipe, ingredients: [...this.state.recipe.ingredients, event.target.value]
+        }
+      })
+    } else {
+      let newCheckedObject = this.state.recipe.ingredients.filter(i => i != event.target.value)
+      this.setState({
+        recipe: {
+          ...this.state.recipe, ingredients: newCheckedObject
+        }
+      })
+    }
   }
 
   // dispatches to delete on submit
   handleDelete() {
-    debugger;
+    this.props.deleteRecipe(this.state.recipe.id)
   }
 
   componentDidMount(){
-    //dispatch to fetch recipe with id params of recipe to setState for recipe. 
+    this.setState ({
+      recipe: this.props.recipe.location.recipe
+    })
   }
 
   render() {
-
-    const recipe = this.props.recipe.location.recipe
-
     return (
       <div>
-      Modify
+      <button onSubmit={this.handleDelete}>Delete Recipe</button>
       <form>
+      <RecipeTextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
+      <br />
+      <RecipeTextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
+      <br />
+      <RecipeTextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
+      <br />
+      {this.ingredientCheckbox()}
       </form>
       </div>
     )
-
   }
 
 }
 
-export default connect(null, null) (ModifyRecipeForm);
+const mapStateToProps = (state) => {
+  return {
+    ingredients: state.ingredientReducer.ingredients
+  }
+}
+
+export default connect(mapStateToProps) (ModifyRecipeForm);
