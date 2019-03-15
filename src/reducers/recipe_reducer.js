@@ -7,7 +7,7 @@ export default function recipeReducer (state={
       case "ADD_RECIPE":
         return{ ...state, recipes: [...state.recipes, action.recipe] }
       case "DELETE_RECIPE":
-        return {...state, recipes: [...state.recipes, state.recipes.filter(recipe => recipe.id !== action.id)]}
+        return {...state, recipes: state.recipes.filter(recipe => recipe.id !== action.recipe.id)}
       default:
         return state
   }

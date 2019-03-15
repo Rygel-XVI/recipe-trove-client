@@ -38,7 +38,7 @@ export const deleteRecipe = (id) => {
   return dispatch => {
     fetch(baseUrl + "/" + id, data)
     .then(resp => resp.json())
-    .then(recipe => dispatch({ type: 'DELETE_RECIPE', recipe }))
+    .then((recipe) => dispatch({ type: 'DELETE_RECIPE', recipe }))
     .catch(err => console.log(err))
   }
 }

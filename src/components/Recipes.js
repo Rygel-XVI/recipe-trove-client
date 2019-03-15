@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-
 import RecipeCard from './RecipeCard'
 
 class Recipes extends Component {
@@ -28,8 +26,4 @@ class Recipes extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { recipes: state.recipeReducer.recipes }
-}
-
-export default connect(mapStateToProps) (Recipes);
+export default Recipes;
