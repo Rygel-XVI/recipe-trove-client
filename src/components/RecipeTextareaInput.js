@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const RecipeTextareaInput = ({ label, value, handleChange }) => (
   <div className="input textarea">

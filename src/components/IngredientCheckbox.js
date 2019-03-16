@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const IngredientCheckbox = ({ ingredient: { id, name, description }, toggleChecked, isChecked, classname }) => (
   <label className={classname}>
