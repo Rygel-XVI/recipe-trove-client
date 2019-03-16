@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import IngredientList from './IngredientList'
-import Recipes from './Recipes'
+import RecipeList from './RecipeList'
 
 //display a list of checkboxes and submit a form to display the recipes associated
 class SearchContainer extends Component {
@@ -18,7 +18,7 @@ class SearchContainer extends Component {
     return (
       <div className="container">
       <IngredientList ingredients={this.props.ingredients} />
-      <Recipes recipes={this.props.recipes} />
+      <RecipeList recipes={this.props.recipes} />
       </div>
     );
   }

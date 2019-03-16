@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import RecipeCard from './RecipeCard'
 
-class Recipes extends Component {
+class RecipeList extends Component {
 
   constructor(props) {
     super(props)
@@ -26,4 +26,4 @@ class Recipes extends Component {
   }
 }
 
-export default Recipes;
+export default RecipeList;
