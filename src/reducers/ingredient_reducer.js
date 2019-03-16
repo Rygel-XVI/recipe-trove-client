@@ -5,8 +5,7 @@ export default function ingredientReducer (state={
       case "SET_INGREDIENTS":
         return {...state, ingredients: action.ingredients }
       case "ADD_INGREDIENT":
-      debugger;
-        return{ ...state, ingredients: [...state.ingredient, action.ingredient] }
+        return { ...state, ingredients: [...state.ingredients, action.ingredient] }
       default:
         return state
   }

@@ -20,7 +20,6 @@ console.log(JSON.stringify({ ingredient }))
   const baseUrl = 'http://localhost:3001/ingredients'
   return dispatch => {
     fetch(baseUrl, data)
-    .then(resp => console.log(resp.json))
     .then(resp => resp.json())
     .then(ingredient => dispatch({ type: 'ADD_INGREDIENT', ingredient }))
     .catch(err => console.log(err))
