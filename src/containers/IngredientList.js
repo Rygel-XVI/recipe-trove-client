@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
-import IngredientCheckbox from './IngredientCheckbox'
+import IngredientCheckbox from '../components/IngredientCheckbox'
 
 class IngredientListForm extends Component {
 

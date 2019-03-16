@@ -11,8 +11,8 @@ import { fetchIngredients } from './actions/ingredients'
 import Nav from './containers/Nav'
 import SearchContainer from './containers/SearchContainer'
 import RecipeDetails from './components/RecipeDetails'
-import CreateContainer from './recipe-create-modify/CreateContainer'
-import ModifyRecipe from './recipe-create-modify/ModifyRecipe'
+import CreateContainer from './containers/CreateContainer'
+import ModifyRecipe from './containers/ModifyRecipe'
 
 class App extends Component {
 
