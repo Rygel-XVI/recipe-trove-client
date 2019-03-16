@@ -69,7 +69,7 @@ class ModifyRecipe extends Component {
 
   componentDidMount(){
     this.setState ({
-      recipe: this.props.recipe.location.recipe
+      recipe: this.props.recipe.location.state
     })
   }
 

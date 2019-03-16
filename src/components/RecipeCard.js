@@ -16,7 +16,7 @@ class RecipeCard extends Component {
 
     return (
       <div>
-      {recipe.name} <NavLink className='navlink' to={{ pathname: "/recipes/" + recipe.id + '/'+ recipe.name, state: recipe }} >See Full Description</NavLink>
+      {recipe.name} <NavLink className='navlink' to={{ pathname: "/recipes/" + recipe.id + '/'+ recipe.name, state: recipe }} >See Full Description</NavLink> or <NavLink className='navlink' to={{ pathname: "/recipes/modify/" + recipe.id, state: recipe }}>Modify or Delete</NavLink>
       </div>
     )}
 
