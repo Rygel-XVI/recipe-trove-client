@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import IngredientCheckbox from '../components/IngredientCheckbox'
 import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
-import { deleteRecipe } from '../actions/recipes'
+import { deleteRecipe, updateRecipe } from '../actions/recipes'
 
 class ModifyRecipeForm extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class ModifyRecipeForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createRecipe(this.state.recipe)
+    this.props.updateRecipe(this.state.recipe)
   }
 
   ingredientCheckbox() {
@@ -77,7 +77,7 @@ class ModifyRecipeForm extends Component {
     return (
       <div>
       <button onClick={this.handleDelete}>Delete Recipe</button>
-      <form>
+      <form onSubmit={this.handleSubmit}>
       <RecipeTextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
       <br />
       <RecipeTextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
@@ -85,6 +85,7 @@ class ModifyRecipeForm extends Component {
       <RecipeTextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
       <br />
       {this.ingredientCheckbox()}
+      <button type='submit'>Update Recipe</button>
       </form>
       </div>
     )
@@ -98,4 +99,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {deleteRecipe}) (ModifyRecipeForm);
+export default connect(mapStateToProps, {deleteRecipe, updateRecipe}) (ModifyRecipeForm);

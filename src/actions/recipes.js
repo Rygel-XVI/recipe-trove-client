@@ -26,6 +26,24 @@ export const createRecipe = (recipe) => {
   }
 }
 
+export const updateRecipe = (recipe) => {
+  let data = {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ recipe })
+  }
+
+  return dispatch => {
+    fetch(baseUrl + "/" + recipe.id, data)
+    .then(resp => resp.json())
+    .then((recipe) => dispatch({ type: 'UPDATE_RECIPE', recipe }))
+    .catch(err => console.log(err))
+  }
+}
+
 export const deleteRecipe = (id) => {
   let data = {
     method: 'DELETE',
