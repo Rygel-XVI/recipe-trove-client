@@ -4,7 +4,7 @@ import IngredientListForm from '../components/IngredientListForm'
 import Recipes from '../components/Recipes'
 
 //display a list of checkboxes and submit a form to display the recipes associated
-class SearchDisplayContainer extends Component {
+class SearchContainer extends Component {
 
   constructor(props) {
     super(props)
@@ -30,4 +30,4 @@ const mapStateToProps = state => {
          }
 }
 
-export default connect(mapStateToProps) (SearchDisplayContainer);
+export default connect(mapStateToProps) (SearchContainer);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { createIngredient } from '../actions/ingredients'
 
-class CreateIngredientForm extends Component {
+class CreateIngredient extends Component {
   constructor(props) {
     super(props)
 
@@ -48,4 +48,4 @@ class CreateIngredientForm extends Component {
   }
 }
 
-export default connect(null, {createIngredient}) (CreateIngredientForm);
+export default connect(null, {createIngredient}) (CreateIngredient);

@@ -7,7 +7,7 @@ import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
 
 
-class CreateRecipeForm extends Component {
+class CreateRecipe extends Component {
   constructor(props) {
     super(props)
 
@@ -88,4 +88,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {createRecipe}) (CreateRecipeForm);
+export default connect(mapStateToProps, {createRecipe}) (CreateRecipe);

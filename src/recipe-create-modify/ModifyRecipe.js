@@ -6,7 +6,7 @@ import RecipeTextInput from './RecipeTextInput'
 import RecipeTextareaInput from './RecipeTextareaInput'
 import { deleteRecipe, updateRecipe } from '../actions/recipes'
 
-class ModifyRecipeForm extends Component {
+class ModifyRecipe extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -99,4 +99,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {deleteRecipe, updateRecipe}) (ModifyRecipeForm);
+export default connect(mapStateToProps, {deleteRecipe, updateRecipe}) (ModifyRecipe);
