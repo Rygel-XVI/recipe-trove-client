@@ -30,8 +30,7 @@ class App extends Component {
             <Route exact path="/" component={SearchContainer} />
             <Route exact path="/search" component={SearchContainer} />
             <Route exact path="/recipes/create" component={CreateContainer} />
-            <Route exact path="/recipes/update" component={ModifyRecipe} />
-            <Route path="/recipes/modify/:id" render={(props) => <ModifyRecipe recipe={props} />} />
+            <Route path="/recipes/:id/modify" render={(props) => <ModifyRecipe recipe={props} />} />
             <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
             </Switch>
           </React.Fragment>
