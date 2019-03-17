@@ -17,8 +17,7 @@ class ModifyIngredient extends Component {
     }
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
-    // this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
-    // this.handleDelete = this.handleDelete.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
 
     this.deleteButton = this.deleteButton.bind(this)
   }
@@ -85,21 +84,3 @@ export default connect(mapStateToProps) (ModifyIngredient);
 // <ingredientTextareaInput label='instructions' value={this.state.ingredient.instructions} handleChange={this.handleChange} />
 // <br />
 // {this.ingredientCheckbox()}
-
-
-// toggleChecked(event) {
-//   if (event.target.checked) {
-//     this.setState({
-//       ingredient: {
-//         ...this.state.ingredient, ingredients: [...this.state.ingredient.ingredients, event.target.value]
-//       }
-//     })
-//   } else {
-//     let newCheckedObject = this.state.ingredient.ingredients.filter(i => i != event.target.value)
-//     this.setState({
-//       ingredient: {
-//         ...this.state.ingredient, ingredients: newCheckedObject
-//       }
-//     })
-//   }
-// }
