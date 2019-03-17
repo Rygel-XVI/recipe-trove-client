@@ -11,6 +11,8 @@ class Ingredients extends Component {
     this.state = {
       ingredients: []
     }
+
+    this.renderIngredients = this.renderIngredients.bind(this)
   }
 
   renderIngredients() {
@@ -26,6 +28,7 @@ class Ingredients extends Component {
   render() {
     return (
       <div>
+      {this.renderIngredients()}
       </div>
     )
   }

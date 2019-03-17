@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
 
 const RecipeDetails = ({ recipe: {location: { state }} }) => (
   <div className="recipe-details">
