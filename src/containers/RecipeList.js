@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import RecipeCard from './RecipeCard'
 
 class RecipeList extends Component {
@@ -17,6 +19,13 @@ class RecipeList extends Component {
     })
   }
 
+
+  componentDidMount(){
+    this.setState ({
+      recipes: this.props.recipes
+    })
+  }
+
   render() {
     return (
       <div className="recipes right-column" >
@@ -26,4 +35,10 @@ class RecipeList extends Component {
   }
 }
 
-export default RecipeList;
+const mapStateToProps = state => {
+  return {
+           recipes: state.recipeReducer.recipes
+         }
+}
+
+export default connect(mapStateToProps)(RecipeList);

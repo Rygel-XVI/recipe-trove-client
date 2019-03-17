@@ -18,7 +18,7 @@ class SearchContainer extends Component {
     return (
       <div className="container">
       <IngredientList ingredients={this.props.ingredients} />
-      <RecipeList recipes={this.props.recipes} />
+      <RecipeList />
       </div>
     );
   }
