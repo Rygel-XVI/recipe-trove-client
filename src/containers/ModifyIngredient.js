@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { deleteingredient, updateingredient } from '../actions/ingredients'
+import { deleteIngredient, updateIngredient } from '../actions/ingredients'
 
 import TextInput from '../components/TextInput'
 import TextareaInput from '../components/TextareaInput'
@@ -53,7 +53,7 @@ class ModifyIngredient extends Component {
   // dispatches to delete on submit
   handleDelete(event) {
     event.preventDefault();
-    this.props.deleteingredient(this.state.ingredient.id)
+    this.props.deleteIngredient(this.state.ingredient.id)
   }
 
   componentDidMount(){

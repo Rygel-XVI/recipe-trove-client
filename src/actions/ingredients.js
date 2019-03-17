@@ -1,3 +1,5 @@
+const baseUrl = 'http://localhost:3001/ingredients'
+
 export const fetchIngredients = () => {
   return dispatch => {
     fetch('http://localhost:3001/ingredients')
@@ -7,7 +9,6 @@ export const fetchIngredients = () => {
 }
 
 export const createIngredient = (ingredient) => {
-console.log(JSON.stringify({ ingredient }))
   let data = {
     method: 'POST',
     headers: {
@@ -17,7 +18,6 @@ console.log(JSON.stringify({ ingredient }))
     body: JSON.stringify({ ingredient })
   }
 
-  const baseUrl = 'http://localhost:3001/ingredients'
   return dispatch => {
     fetch(baseUrl, data)
     .then(resp => resp.json())
