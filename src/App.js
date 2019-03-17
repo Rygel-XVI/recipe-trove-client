@@ -12,6 +12,9 @@ import SearchContainer from './containers/SearchContainer'
 import RecipeDetails from './components/RecipeDetails'
 import CreateContainer from './containers/CreateContainer'
 import ModifyRecipe from './containers/ModifyRecipe'
+import ModifyIngredient from './containers/ModifyIngredient'
+import Ingredients from './containers/Ingredients'
+import RecipeList from './containers/RecipeList'
 
 class App extends Component {
 
@@ -29,9 +32,12 @@ class App extends Component {
             <Switch>
             <Route exact path="/" component={SearchContainer} />
             <Route exact path="/search" component={SearchContainer} />
-            <Route exact path="/recipes/create" component={CreateContainer} />
+            <Route exact path="/recipes" component={RecipeList} />
+            <Route exact path="/ingredients" component={Ingredients} />
+            <Route exact path="/create" component={CreateContainer} />
             <Route path="/recipes/:id/modify" render={(props) => <ModifyRecipe recipe={props} />} />
             <Route path="/recipes/:id/:name" render={(props) => <RecipeDetails recipe={props} />} />
+            <Route path="/ingredients/:id/modify" render={(props) => <ModifyIngredient ingredient={props} />} />
             </Switch>
           </React.Fragment>
         </Router>

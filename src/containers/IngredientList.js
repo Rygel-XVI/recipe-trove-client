@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions/recipes'
 import IngredientCheckbox from '../components/IngredientCheckbox'
 
-class IngredientListForm extends Component {
+class IngredientList extends Component {
 
   constructor(props) {
     super(props)
@@ -62,4 +62,4 @@ class IngredientListForm extends Component {
 
 
 // export default IngredientListForm
-export default connect(null, { fetchRecipes }) (IngredientListForm);
+export default connect(null, { fetchRecipes }) (IngredientList);
