@@ -24,7 +24,7 @@ class Ingredients extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchIngredients()
+    // this.props.fetchIngredients()
   }
 
   render() {
