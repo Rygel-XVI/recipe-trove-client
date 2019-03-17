@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchIngredients } from '../actions/ingredients'
+import { NavLink } from 'react-router-dom';
+
 
 import IngredientCard from './IngredientCard'
 
@@ -12,10 +14,10 @@ class Ingredients extends Component {
       ingredients: []
     }
 
-    this.renderIngredients = this.renderIngredients.bind(this)
+    this.ingredientCards = this.ingredientCards.bind(this)
   }
 
-  renderIngredients() {
+  ingredientCards() {
     return this.props.ingredients.map(ingredient => {
       return <IngredientCard ingredient={ingredient} key={ingredient.id}/>
     })
@@ -28,7 +30,10 @@ class Ingredients extends Component {
   render() {
     return (
       <div>
-      {this.renderIngredients()}
+      Click to Modify/Delete Ingredient
+      <ul>
+      {this.ingredientCards()}
+      </ul>
       </div>
     )
   }

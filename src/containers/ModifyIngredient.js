@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import ingredientTextInput from '../components/ingredientTextInput'
-import ingredientTextareaInput from '../components/ingredientTextareaInput'
+// import ingredientTextInput from '../components/ingredientTextInput'
+// import ingredientTextareaInput from '../components/ingredientTextareaInput'
 import { deleteingredient, updateingredient } from '../actions/ingredients'
 
 class ModifyIngredient extends Component {
@@ -20,6 +20,11 @@ class ModifyIngredient extends Component {
     // this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
     // this.toggleChecked = this.toggleChecked.bind(this)
     // this.handleDelete = this.handleDelete.bind(this)
+
+    this.deleteButton = this.deleteButton(this)
+  }
+
+  deleteButton() {
   }
 
   handleChange(event) {
