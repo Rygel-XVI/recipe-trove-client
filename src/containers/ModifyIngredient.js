@@ -22,7 +22,7 @@ class ModifyIngredient extends Component {
     this.handleDelete = this.handleDelete.bind(this)
 
     this.recipeCards.bind(this)
-    this.deleteButton = this.deleteButton.bind(this)
+    this.deleteButton.bind(this)
   }
 
   deleteButton() {

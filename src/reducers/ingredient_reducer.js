@@ -6,7 +6,7 @@ export default function ingredientReducer (state={
         return {...state, ingredients: action.ingredients }
       case "ADD_INGREDIENT":
         return { ...state, ingredients: [...state.ingredients, action.ingredient] }
-      case "MODIFY_INGREDIENT":
+      case "UPDATE_INGREDIENT":
         let updatedIngredients = state.ingredients.filter(ingredient => ingredient.id !== action.ingredient.id)
         updatedIngredients.push(action.ingredient)
         return { ...state, ingredients: updatedIngredients }

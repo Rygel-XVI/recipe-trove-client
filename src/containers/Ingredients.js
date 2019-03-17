@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchIngredients } from '../actions/ingredients'
 import { NavLink } from 'react-router-dom';
-
 
 import IngredientCard from './IngredientCard'
 
@@ -21,10 +19,6 @@ class Ingredients extends Component {
     return this.props.ingredients.map(ingredient => {
       return <IngredientCard ingredient={ingredient} key={ingredient.id}/>
     })
-  }
-
-  componentDidMount() {
-    // this.props.fetchIngredients()
   }
 
   render() {
@@ -46,4 +40,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchIngredients }) (Ingredients);
+export default connect(mapStateToProps) (Ingredients);
