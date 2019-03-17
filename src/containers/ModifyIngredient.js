@@ -11,6 +11,7 @@ class ModifyIngredient extends Component {
     super(props)
     this.state = {
       ingredient: {
+        id: '',
         name: '',
         description: '',
         recipes: []
@@ -86,4 +87,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps) (ModifyIngredient);
+export default connect(mapStateToProps, {deleteIngredient, updateIngredient}) (ModifyIngredient);
