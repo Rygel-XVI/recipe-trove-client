@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { deleteingredient, updateingredient } from '../actions/ingredients'
 
 import TextInput from '../components/TextInput'
 import TextareaInput from '../components/TextareaInput'
-import { deleteingredient, updateingredient } from '../actions/ingredients'
+import RecipeCard from './RecipeCard'
 
 class ModifyIngredient extends Component {
   constructor(props) {
@@ -15,10 +16,11 @@ class ModifyIngredient extends Component {
         recipes: []
       }
     }
-    // this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
 
+    this.recipeCards.bind(this)
     this.deleteButton = this.deleteButton.bind(this)
   }
 
@@ -26,6 +28,12 @@ class ModifyIngredient extends Component {
     if (this.state.ingredient.recipes.length === 0) {
       return <button onClick={this.handleDelete}>Delete Ingredient</button>
     }
+  }
+
+  recipeCards() {
+    return this.state.ingredient.recipes.map(recipe => {
+      return <RecipeCard recipe={recipe} key={recipe.id} />
+    })
   }
 
   handleChange(event) {
@@ -38,8 +46,8 @@ class ModifyIngredient extends Component {
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
-    // this.props.updateIngredient(this.state.ingredient)
+    event.preventDefault();
+    this.props.updateIngredient(this.state.ingredient)
   }
 
   // dispatches to delete on submit
@@ -58,9 +66,12 @@ class ModifyIngredient extends Component {
     return (
       <div>
       {this.deleteButton()}
+      {this.recipeCards()}
       <form onSubmit={this.handleSubmit}>
-
-
+      <TextInput label='name' value={this.state.ingredient.name} handleChange={this.handleChange} />
+      <br />
+      <TextareaInput label='description' value={this.state.ingredient.description} handleChange={this.handleChange} />
+      <br />
       <button type='submit'>Update Ingredient</button>
       </form>
       </div>
@@ -76,11 +87,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps) (ModifyIngredient);
-
-// <ingredientTextInput label='name' value={this.state.ingredient.name} handleChange={this.handleChange} />
-// <br />
-// <ingredientTextareaInput label='description' value={this.state.ingredient.description} handleChange={this.handleChange} />
-// <br />
-// <ingredientTextareaInput label='instructions' value={this.state.ingredient.instructions} handleChange={this.handleChange} />
-// <br />
-// {this.ingredientCheckbox()}

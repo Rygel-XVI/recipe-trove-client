@@ -6,7 +6,6 @@ import IngredientCheckbox from '../components/IngredientCheckbox'
 import TextInput from '../components/TextInput'
 import TextareaInput from '../components/TextareaInput'
 
-
 class CreateRecipe extends Component {
   constructor(props) {
     super(props)
