@@ -4,7 +4,7 @@ import { createRecipe } from '../actions/recipes'
 
 import IngredientCheckbox from '../components/IngredientCheckbox'
 import TextInput from '../components/TextInput'
-import RecipeTextareaInput from '../components/RecipeTextareaInput'
+import TextareaInput from '../components/TextareaInput'
 
 
 class CreateRecipe extends Component {
@@ -69,9 +69,9 @@ class CreateRecipe extends Component {
       <form className="create-recipe-form" onSubmit={this.handleSubmit}>
       <TextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
       <br />
-      <RecipeTextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
+      <TextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
       <br />
-      <RecipeTextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
+      <TextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
       <br />
       {this.ingredientCheckbox()}
       <button className='btn-create-recipe' type="submit">Create Recipe</button>

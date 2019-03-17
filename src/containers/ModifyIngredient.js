@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import TextInput from '../components/TextInput'
-// import ingredientTextareaInput from '../components/ingredientTextareaInput'
+import TextareaInput from '../components/TextareaInput'
 import { deleteingredient, updateingredient } from '../actions/ingredients'
 
 class ModifyIngredient extends Component {
@@ -24,7 +24,7 @@ class ModifyIngredient extends Component {
   }
 
   deleteButton() {
-    if (this.state.ingredient.recipes.length > 0) {
+    if (this.state.ingredient.recipes.length === 0) {
       return <button onClick={this.handleDelete}>Delete Ingredient</button>
     }
   }
