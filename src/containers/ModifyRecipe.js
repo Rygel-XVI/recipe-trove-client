@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import IngredientCheckbox from '../components/IngredientCheckbox'
-import RecipeTextInput from '../components/RecipeTextInput'
+import TextInput from '../components/TextInput'
 import RecipeTextareaInput from '../components/RecipeTextareaInput'
 import { deleteRecipe, updateRecipe } from '../actions/recipes'
 
@@ -78,7 +78,7 @@ class ModifyRecipe extends Component {
       <div>
       <button onClick={this.handleDelete}>Delete Recipe</button>
       <form onSubmit={this.handleSubmit}>
-      <RecipeTextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
+      <TextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
       <br />
       <RecipeTextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
       <br />

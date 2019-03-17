@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-// import ingredientTextInput from '../components/ingredientTextInput'
+import TextInput from '../components/TextInput'
 // import ingredientTextareaInput from '../components/ingredientTextareaInput'
 import { deleteingredient, updateingredient } from '../actions/ingredients'
 
@@ -12,19 +12,21 @@ class ModifyIngredient extends Component {
       ingredient: {
         name: '',
         description: '',
-        ingredients: []
+        recipes: []
       }
     }
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
     // this.ingredientCheckbox = this.ingredientCheckbox.bind(this)
-    // this.toggleChecked = this.toggleChecked.bind(this)
     // this.handleDelete = this.handleDelete.bind(this)
 
-    this.deleteButton = this.deleteButton(this)
+    this.deleteButton = this.deleteButton.bind(this)
   }
 
   deleteButton() {
+    if (this.state.ingredient.recipes.length > 0) {
+      return <button onClick={this.handleDelete}>Delete Ingredient</button>
+    }
   }
 
   handleChange(event) {
@@ -39,23 +41,6 @@ class ModifyIngredient extends Component {
   handleSubmit(event) {
     // event.preventDefault();
     // this.props.updateIngredient(this.state.ingredient)
-  }
-
-  toggleChecked(event) {
-    if (event.target.checked) {
-      this.setState({
-        ingredient: {
-          ...this.state.ingredient, ingredients: [...this.state.ingredient.ingredients, event.target.value]
-        }
-      })
-    } else {
-      let newCheckedObject = this.state.ingredient.ingredients.filter(i => i != event.target.value)
-      this.setState({
-        ingredient: {
-          ...this.state.ingredient, ingredients: newCheckedObject
-        }
-      })
-    }
   }
 
   // dispatches to delete on submit
@@ -73,8 +58,9 @@ class ModifyIngredient extends Component {
   render() {
     return (
       <div>
-      <button onClick={this.handleDelete}>Delete Ingredient</button>
+      {this.deleteButton()}
       <form onSubmit={this.handleSubmit}>
+
 
       <button type='submit'>Update Ingredient</button>
       </form>
@@ -99,3 +85,21 @@ export default connect(mapStateToProps) (ModifyIngredient);
 // <ingredientTextareaInput label='instructions' value={this.state.ingredient.instructions} handleChange={this.handleChange} />
 // <br />
 // {this.ingredientCheckbox()}
+
+
+// toggleChecked(event) {
+//   if (event.target.checked) {
+//     this.setState({
+//       ingredient: {
+//         ...this.state.ingredient, ingredients: [...this.state.ingredient.ingredients, event.target.value]
+//       }
+//     })
+//   } else {
+//     let newCheckedObject = this.state.ingredient.ingredients.filter(i => i != event.target.value)
+//     this.setState({
+//       ingredient: {
+//         ...this.state.ingredient, ingredients: newCheckedObject
+//       }
+//     })
+//   }
+// }
