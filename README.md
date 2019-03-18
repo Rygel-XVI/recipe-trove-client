@@ -1,3 +1,11 @@
+This is a capstone project to create a SPA with JS/React utilizing a Rails API which can be found <a href="https://github.com/SeeYouSpaceCowboy/todo-api">here</a>.
+
+This app allows the user to create and modify recipes and ingredients to track your cookbook.
+
+This will be an ongoing project and a login/logout system will be added as well as an evolving design as I develop my CSS and Front-End skills.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
