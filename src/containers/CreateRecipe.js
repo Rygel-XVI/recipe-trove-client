@@ -67,11 +67,8 @@ class CreateRecipe extends Component {
       <div className='create-recipe-div'>
       <form className="create-recipe-form" onSubmit={this.handleSubmit}>
       <TextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
-      <br />
       <TextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
-      <br />
       <TextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
-      <br />
       {this.ingredientCheckbox()}
       <button className='btn-create-recipe' type="submit">Create Recipe</button>
       </form>
