@@ -79,11 +79,8 @@ class ModifyRecipe extends Component {
       <button onClick={this.handleDelete}>Delete Recipe</button>
       <form onSubmit={this.handleSubmit}>
       <TextInput label='name' value={this.state.recipe.name} handleChange={this.handleChange} />
-      <br />
       <TextareaInput label='description' value={this.state.recipe.description} handleChange={this.handleChange} />
-      <br />
       <TextareaInput label='instructions' value={this.state.recipe.instructions} handleChange={this.handleChange} />
-      <br />
       {this.ingredientCheckbox()}
       <button type='submit'>Update Recipe</button>
       </form>

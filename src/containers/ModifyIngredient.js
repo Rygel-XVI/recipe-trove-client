@@ -70,9 +70,7 @@ class ModifyIngredient extends Component {
       {this.recipeCards()}
       <form onSubmit={this.handleSubmit}>
       <TextInput label='name' value={this.state.ingredient.name} handleChange={this.handleChange} />
-      <br />
       <TextareaInput label='description' value={this.state.ingredient.description} handleChange={this.handleChange} />
-      <br />
       <button type='submit'>Update Ingredient</button>
       </form>
       </div>
